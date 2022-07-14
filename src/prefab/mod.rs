@@ -1,3 +1,5 @@
+//! Load prefabs from RON files
+
 pub mod models;
 
 use serde::de::DeserializeOwned;

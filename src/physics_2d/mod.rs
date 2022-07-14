@@ -1,3 +1,7 @@
+#![warn(missing_docs)]
+
+//! Simple 2d physics
+
 use bevy::prelude::*;
 
 #[cfg(feature = "serde")]

@@ -1,3 +1,8 @@
+//! Components that keep track of an entity's lifetime
+//!
+//! Supported lifetimes include distance, duration and penetration. Entities are not automatically
+//! destroyed upon exceeding lifetime, that is left the user to handle.
+
 use bevy::prelude::*;
 use std::time::Duration;
 
@@ -7,22 +12,32 @@ use bevy_inspector_egui::{egui::Ui, Context, Inspectable};
 use super::health::Health;
 use crate::misc::displacement::*;
 
+/// Trait for lifetime
 pub trait Lifetime {
+    /// Query if the lifetime has expired
     fn is_expired(&self) -> bool;
+
+    /// Reset the lifetime to the state as when it was originally initialized
     fn reset(&mut self);
 }
 
+/// Keeps track of distance entity was travelled
 #[derive(Component)]
 pub struct DistanceLifetime {
     max_distance: f32,
     displacement: Displacement,
 }
 
+/// Keeps track of the duration the entity was alive
 #[derive(Component)]
 pub struct DurationLifetime {
     timer: Timer,
 }
 
+/// Keeps track of the health of an entity
+///
+/// Can most commonly be used to implement a 'penetration' system for bullets, where they die after
+/// hitting X number of enemies.
 #[derive(Component)]
 pub struct PenetrationLifetime {
     health: Health,

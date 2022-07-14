@@ -1,3 +1,7 @@
+#![warn(missing_docs)]
+
+//! Ingame health bar UI element
+
 use bevy::{prelude::*, sprite::Anchor};
 
 pub struct HealthBarPrefab {
