@@ -1,9 +1,12 @@
+<div align="center">
 
 # bevy_bobs
 
-Collection of common utility components
+Bits and Bobs for [Bevy](https://bevyengine.org/) Projects
 
-# FEATURES
+</div>
+
+## Included utilities
 
 - **attack_pattern** - utilities to generate attack patterns (straight, shotgun, around)
 - **health_bar** - health bar ui component

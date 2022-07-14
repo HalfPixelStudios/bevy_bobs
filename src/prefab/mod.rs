@@ -7,10 +7,12 @@ use std::collections::HashMap;
 use std::fs;
 use std::path::Path;
 
+/// Type used to index prefabs
 pub type PrefabId = String;
 
 type PrefabMap<P> = HashMap<PrefabId, P>;
 
+/// Resource to store prefabs
 pub struct PrefabLib<P: DeserializeOwned> {
     map: PrefabMap<P>,
 }
