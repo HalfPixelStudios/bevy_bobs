@@ -1,0 +1,30 @@
+[package]
+name = "bevy_bobs"
+version = "0.1.0"
+edition = "2021"
+authors = ["nithinmuthukumar", "MrPicklePinosaur"]
+description = "Collection of common utility components"
+repository = "https://github.com/HalfPixelStudios/bevy_bobs"
+
+[lib]
+
+[dependencies]
+bevy = { version = "0.7" }
+rand = { version = "0.8.5" }
+
+ron = "0.7.1"
+serde = { version = "1", features = ["derive"] }
+
+bevy-inspector-egui = { version = "0.11", optional = true}
+
+[features]
+default = []
+
+prefab = []
+physics_2d = []
+spawn_wave = []
+attack_pattern = []
+health_bar = []
+
+egui = ["dep:bevy-inspector-egui"]
+serde = []
