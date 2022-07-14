@@ -3,7 +3,7 @@ name = "bevy_bobs"
 version = "0.1.0"
 edition = "2021"
 authors = ["nithinmuthukumar", "MrPicklePinosaur"]
-description = "Collection of common utility components"
+description = "Collection of utilities for bevy projects"
 repository = "https://github.com/HalfPixelStudios/bevy_bobs"
 
 [lib]
@@ -19,6 +19,7 @@ bevy-inspector-egui = { version = "0.11", optional = true}
 
 [features]
 default = []
+all = ["prefab", "physics_2d", "spawn_wave", "attack_pattern", "health_bar"]
 
 prefab = []
 physics_2d = []

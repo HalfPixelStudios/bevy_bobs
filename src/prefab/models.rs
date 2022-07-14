@@ -1,3 +1,5 @@
+//! Utility types for use in RON prefab files
+
 use bevy::prelude::*;
 use serde::Deserialize;
 

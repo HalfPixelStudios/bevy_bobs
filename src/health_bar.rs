@@ -1,9 +1,16 @@
+//! Ingame health bar UI element
+
 use bevy::{prelude::*, sprite::Anchor};
 
+/// Used to initalize a health bar
 pub struct HealthBarPrefab {
+    /// Physical dimensions of the health bar
     pub dimension: Vec2,
+    /// Color of the health bar background
     pub bg_color: Color,
+    /// Color of the health bar foreground
     pub fg_color: Color,
+    /// Initial location of the health bar
     pub translation: Vec3,
 }
 
@@ -45,6 +52,7 @@ impl Plugin for HealthBarPlugin {
     }
 }
 
+/// Spawn a new health bar from prefab
 pub fn spawn_health_bar(cmd: &mut Commands, prefab: HealthBarPrefab) -> Entity {
     let parent = cmd.spawn().id();
     let bg = cmd.spawn().id();

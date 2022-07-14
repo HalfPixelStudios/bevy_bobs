@@ -1,17 +1,28 @@
+//! Generate attack patterns
+//!
+//! Utility to generate a set of points based on a specified attack pattern.
+
 use bevy::{math::Mat2, prelude::*};
 use std::f32::consts::PI;
 
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
 
+/// Various attack patterns that are supported
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 #[derive(Clone)]
 pub enum AttackPattern {
+    /// A single attack in one direction
     Straight,
+    /// A shotgun like spread of points
     Shotgun { shots: u32, angle: f32 },
+    /// Evenly spaced out shots in a circle
     Around { shots: u32 },
 }
 
+/// Generates a set of points based off an attack pattern.
+///
+/// Takes in a direction and the desired attack pattern.
 pub fn generate_attack_points(dir: Vec2, attack_pattern: &AttackPattern) -> Vec<Vec2> {
     match attack_pattern {
         AttackPattern::Straight => return vec![dir],

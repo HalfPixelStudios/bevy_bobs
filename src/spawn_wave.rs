@@ -1,3 +1,6 @@
+#![warn(missing_docs)]
+//! System to specify and spawn waves of enemies
+
 use bevy::{core::Stopwatch, prelude::*};
 use rand::{seq::SliceRandom, Rng};
 
