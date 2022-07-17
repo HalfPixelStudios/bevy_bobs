@@ -59,11 +59,7 @@ pub fn spawn_health_bar(cmd: &mut Commands, prefab: HealthBarPrefab) -> Entity {
     let fg = cmd.spawn().id();
 
     cmd.entity(parent)
-        .insert(HealthBar::new(prefab.dimension))
-        .insert(Transform {
-            translation: prefab.translation,
-            ..default()
-        });
+        .insert(HealthBar::new(prefab.dimension));
 
     cmd.entity(parent).push_children(&[fg, bg]);
 
@@ -90,6 +86,12 @@ pub fn spawn_health_bar(cmd: &mut Commands, prefab: HealthBarPrefab) -> Entity {
             ..default()
         })
         .insert(HealthBarForeground);
+
+    cmd.entity(parent)
+        .insert(Transform {
+            translation: prefab.translation,
+            ..default()
+        });
 
     return parent;
 }

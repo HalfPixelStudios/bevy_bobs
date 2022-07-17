@@ -25,4 +25,6 @@ pub mod physics_2d;
 pub mod prefab;
 #[cfg(feature = "spawn_wave")]
 pub mod spawn_wave;
+#[cfg(feature = "sfx")]
+pub mod sfx;
 
