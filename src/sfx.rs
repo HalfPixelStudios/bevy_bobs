@@ -1,3 +1,5 @@
+//! Play sound effects using events
+
 use bevy::prelude::*;
 use bevy_kira_audio::Audio;
 use rand::{seq::SliceRandom, Rng};
@@ -23,16 +25,7 @@ impl Plugin for AudioPlugin {
     }
 }
 
-pub fn play_sound(assets: &Res<AssetServer>, audio: &Res<Audio>, sfx_path: &str) {
-    let path = format!("sfx/{}", sfx_path);
-    audio.play(assets.load(&path));
-}
-
-pub fn play_random_sound(assets: &Res<AssetServer>, audio: &Res<Audio>, sfx_paths: Vec<&str>) {
-    if sfx_paths.len() == 0 {
-        return;
-    }
-    let sfx_path = sfx_paths.choose(&mut rand::thread_rng()).unwrap();
+fn play_sound(assets: &Res<AssetServer>, audio: &Res<Audio>, sfx_path: &str) {
     let path = format!("sfx/{}", sfx_path);
     audio.play(assets.load(&path));
 }
