@@ -27,4 +27,6 @@ pub mod prefab;
 pub mod spawn_wave;
 #[cfg(feature = "sfx")]
 pub mod sfx;
+#[cfg(feature = "cursor")]
+pub mod cursor;
 

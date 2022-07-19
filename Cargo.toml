@@ -20,7 +20,7 @@ bevy_kira_audio = { version = "0.10.0", default-features = false, features = [ "
 
 [features]
 default = []
-all = ["prefab", "physics_2d", "spawn_wave", "attack_pattern", "health_bar", "sfx"]
+all = ["prefab", "physics_2d", "spawn_wave", "attack_pattern", "health_bar", "sfx", "cursor"]
 
 prefab = []
 physics_2d = []
@@ -28,6 +28,7 @@ spawn_wave = []
 attack_pattern = []
 health_bar = []
 sfx = ["dep:bevy_kira_audio"]
+cursor = []
 
 egui = ["dep:bevy-inspector-egui"]
 serde = []
