@@ -1,6 +1,7 @@
 //! Ingame health bar UI element
 
 use bevy::{prelude::*, sprite::Anchor};
+use crate::component::health::Health;
 
 /// Used to initalize a health bar
 pub struct HealthBarPrefab {
@@ -114,5 +115,12 @@ fn health_bar_system(
                     Some(Vec2::new(health_bar.dimension.x, health_bar.dimension.y));
             }
         }
+    }
+}
+
+/// Utility system that syncs bevy_bobs's health bar with health component.
+pub fn sync_health(mut query: Query<(&Health, &mut HealthBar)>) {
+    for (health, mut health_bar) in query.iter_mut() {
+        health_bar.set_percent(health.percent());
     }
 }

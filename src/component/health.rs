@@ -57,6 +57,12 @@ impl Health {
     pub fn is_zero(&self) -> bool {
         self.current_hp == 0
     }
+
+    /// Get current health percentage based on max health
+    // TODO watch for division by zero?
+    pub fn percent(&self) -> f32 {
+        (self.current_hp/self.original_hp) as f32
+    }
 }
 
 impl Deref for Health {
