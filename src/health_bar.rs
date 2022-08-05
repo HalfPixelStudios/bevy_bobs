@@ -60,7 +60,10 @@ pub fn spawn_health_bar(cmd: &mut Commands, prefab: HealthBarPrefab) -> Entity {
     let fg = cmd.spawn().id();
 
     cmd.entity(parent)
-        .insert(HealthBar::new(prefab.dimension));
+        .insert(HealthBar::new(prefab.dimension))
+        .insert_bundle(TransformBundle::from_transform(
+            Transform::from_translation(prefab.translation),
+        ));
 
     cmd.entity(parent).push_children(&[fg, bg]);
 
@@ -88,12 +91,6 @@ pub fn spawn_health_bar(cmd: &mut Commands, prefab: HealthBarPrefab) -> Entity {
         })
         .insert(HealthBarForeground);
 
-    cmd.entity(parent)
-        .insert(Transform {
-            translation: prefab.translation,
-            ..default()
-        });
-
     return parent;
 }
 
@@ -118,9 +115,11 @@ fn health_bar_system(
     }
 }
 
+/*
 /// Utility system that syncs bevy_bobs's health bar with health component.
 pub fn sync_health(mut query: Query<(&Health, &mut HealthBar)>) {
     for (health, mut health_bar) in query.iter_mut() {
         health_bar.set_percent(health.percent());
     }
 }
+*/
