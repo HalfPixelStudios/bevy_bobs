@@ -61,7 +61,7 @@ impl Health {
     /// Get current health percentage based on max health
     // TODO watch for division by zero?
     pub fn percent(&self) -> f32 {
-        (self.current_hp/self.original_hp) as f32
+        self.current_hp as f32 / self.original_hp as f32
     }
 }
 
