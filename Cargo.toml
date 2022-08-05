@@ -18,11 +18,13 @@ serde = { version = "1", features = ["derive"] }
 bevy-inspector-egui = { version = "0.11", optional = true }
 bevy_kira_audio = { version = "0.10.0", default-features = false, features = [ "wav" ], optional = true }
 
+anyhow = { version = "1", optional = true }
+
 [features]
-default = []
+default = ["prefab"]
 all = ["prefab", "physics_2d", "spawn_wave", "attack_pattern", "health_bar", "sfx", "cursor"]
 
-prefab = []
+prefab = ["dep:anyhow"]
 physics_2d = []
 spawn_wave = []
 attack_pattern = []
