@@ -2,9 +2,9 @@
 //!
 //! Also supports a health cap and restoring to original health value.
 
-use bevy::prelude::*;
 use std::ops::Deref;
 
+use bevy::prelude::*;
 #[cfg(feature = "egui")]
 use bevy_inspector_egui::Inspectable;
 #[cfg(feature = "serde")]

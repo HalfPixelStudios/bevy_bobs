@@ -2,10 +2,9 @@
 
 pub mod models;
 
+use std::{collections::HashMap, fs, path::Path};
+
 use serde::de::DeserializeOwned;
-use std::collections::HashMap;
-use std::fs;
-use std::path::Path;
 
 /// Type used to index prefabs
 pub type PrefabId = String;

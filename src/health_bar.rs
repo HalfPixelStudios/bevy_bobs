@@ -1,6 +1,7 @@
 //! Ingame health bar UI element
 
 use bevy::{prelude::*, sprite::Anchor};
+
 use crate::component::health::Health;
 
 /// Used to initalize a health bar

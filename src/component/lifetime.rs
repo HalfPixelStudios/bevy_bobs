@@ -3,9 +3,9 @@
 //! Supported lifetimes include distance, duration and penetration. Entities are not automatically
 //! destroyed upon exceeding lifetime, that is left the user to handle.
 
-use bevy::prelude::*;
 use std::time::Duration;
 
+use bevy::prelude::*;
 #[cfg(feature = "egui")]
 use bevy_inspector_egui::{egui::Ui, Context, Inspectable};
 

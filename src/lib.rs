@@ -1,4 +1,3 @@
-
 //! Collection of lightweight bits and bobs for use with Bevy projects.
 //!
 //! Some of the things that are included:
@@ -16,6 +15,8 @@
 #[cfg(feature = "attack_pattern")]
 pub mod attack_pattern;
 pub mod component;
+#[cfg(feature = "cursor")]
+pub mod cursor;
 #[cfg(feature = "health_bar")]
 pub mod health_bar;
 pub mod misc;
@@ -23,10 +24,7 @@ pub mod misc;
 pub mod physics_2d;
 #[cfg(feature = "prefab")]
 pub mod prefab;
-#[cfg(feature = "spawn_wave")]
-pub mod spawn_wave;
 #[cfg(feature = "sfx")]
 pub mod sfx;
-#[cfg(feature = "cursor")]
-pub mod cursor;
-
+#[cfg(feature = "spawn_wave")]
+pub mod spawn_wave;

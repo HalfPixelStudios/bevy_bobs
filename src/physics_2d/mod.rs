@@ -3,7 +3,6 @@
 //! Apply forces to objects, apply damping and gravity.
 
 use bevy::prelude::*;
-
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
 
