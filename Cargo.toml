@@ -19,7 +19,7 @@ bevy-inspector-egui = { version = "0.11", optional = true }
 bevy_kira_audio = { version = "0.10.0", default-features = false, features = [ "wav" ], optional = true }
 
 [features]
-default = []
+default = ["all"]
 all = ["prefab", "physics_2d", "spawn_wave", "attack_pattern", "health_bar", "sfx", "cursor"]
 
 prefab = []

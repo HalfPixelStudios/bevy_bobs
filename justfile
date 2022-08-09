@@ -8,7 +8,7 @@ fmt:
     cargo +nightly fmt --all
 
 chk:
-    cargo check
+    cargo check --features all
 
 lint:
     cargo clippy

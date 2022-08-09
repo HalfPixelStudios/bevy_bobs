@@ -10,7 +10,7 @@ use serde::{Deserialize, Serialize};
 pub struct WorldGravity(pub Vec2);
 
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
-#[derive(Component, Clone, Default)]
+#[derive(Component, Clone)]
 pub struct RigidBody {
     pub mass: f32,
     /// override the world's gravity
@@ -19,6 +19,19 @@ pub struct RigidBody {
     pub velocity: Vec2,
     pub max_velocity: Option<f32>,
     pub force: Vec2,
+}
+
+impl Default for RigidBody {
+    fn default() -> Self {
+        RigidBody {
+            mass: 1.,
+            gravity_scale: None,
+            linear_damping: 0.,
+            velocity: Vec2::ZERO,
+            max_velocity: None,
+            force: Vec2::ZERO,
+        }
+    }
 }
 
 pub struct PhysicsPlugin;

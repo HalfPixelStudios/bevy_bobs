@@ -129,13 +129,23 @@ impl Lifetime for PenetrationLifetime {
     }
 }
 
-pub fn duration_lifetime_system(time: Res<Time>, mut query: Query<&mut DurationLifetime>) {
+/// Plugin to perform lifetime updates
+pub struct LifetimePlugin;
+
+impl Plugin for LifetimePlugin {
+    fn build(&self, app: &mut App) {
+        app.add_system(distance_lifetime_system)
+            .add_system(duration_lifetime_system);
+    }
+}
+
+fn duration_lifetime_system(time: Res<Time>, mut query: Query<&mut DurationLifetime>) {
     for mut lifetime in query.iter_mut() {
         lifetime.timer.tick(time.delta());
     }
 }
 
-pub fn distance_lifetime_system(mut query: Query<(&Transform, &mut DistanceLifetime)>) {
+fn distance_lifetime_system(mut query: Query<(&Transform, &mut DistanceLifetime)>) {
     for (transform, mut lifetime) in query.iter_mut() {
         lifetime.displacement.update(transform.translation);
     }
