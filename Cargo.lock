@@ -333,12 +333,14 @@ dependencies = [
 name = "bevy_bobs"
 version = "0.1.0"
 dependencies = [
+ "anyhow",
  "bevy",
  "bevy-inspector-egui",
  "bevy_kira_audio",
  "rand",
  "ron",
  "serde",
+ "thiserror",
 ]
 
 [[package]]

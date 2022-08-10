@@ -11,6 +11,8 @@ repository = "https://github.com/HalfPixelStudios/bevy_bobs"
 [dependencies]
 bevy = { version = "0.7" }
 rand = { version = "0.8.5" }
+anyhow = "1.0.58"
+thiserror = "1"
 
 ron = "0.7.1"
 serde = { version = "1", features = ["derive"] }
@@ -20,7 +22,7 @@ bevy_kira_audio = { version = "0.10.0", default-features = false, features = [ "
 
 [features]
 default = ["all"]
-all = ["prefab", "physics_2d", "spawn_wave", "attack_pattern", "health_bar", "sfx", "cursor"]
+all = ["prefab", "physics_2d", "spawn_wave", "attack_pattern", "health_bar", "sfx", "cursor", "grid"]
 
 prefab = []
 physics_2d = []
@@ -29,6 +31,7 @@ attack_pattern = []
 health_bar = []
 sfx = ["dep:bevy_kira_audio"]
 cursor = []
+grid = []
 
 egui = ["dep:bevy-inspector-egui"]
 serde = []

@@ -17,6 +17,8 @@ pub mod attack_pattern;
 pub mod component;
 #[cfg(feature = "cursor")]
 pub mod cursor;
+#[cfg(feature = "grid")]
+pub mod grid;
 #[cfg(feature = "health_bar")]
 pub mod health_bar;
 pub mod misc;
