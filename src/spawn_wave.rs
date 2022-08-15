@@ -1,7 +1,7 @@
 #![warn(missing_docs)]
 //! System to specify and spawn waves of enemies
 
-use bevy::{core::Stopwatch, prelude::*};
+use bevy::{prelude::*, time::Stopwatch};
 use rand::{seq::SliceRandom, Rng};
 
 // TODO make spawn_id generic
