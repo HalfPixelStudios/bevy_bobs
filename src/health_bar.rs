@@ -62,9 +62,9 @@ pub fn spawn_health_bar(cmd: &mut Commands, prefab: HealthBarPrefab) -> Entity {
 
     cmd.entity(parent)
         .insert(HealthBar::new(prefab.dimension))
-        .insert_bundle(TransformBundle::from_transform(
-            Transform::from_translation(prefab.translation),
-        ));
+        .insert_bundle(SpatialBundle::from_transform(Transform::from_translation(
+            prefab.translation,
+        )));
 
     cmd.entity(parent).push_children(&[fg, bg]);
 
