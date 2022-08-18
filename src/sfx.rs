@@ -1,7 +1,7 @@
 //! Play sound effects using events
 
 use bevy::prelude::*;
-use bevy_kira_audio::Audio;
+use bevy_kira_audio::AudioControl;
 use rand::{seq::SliceRandom, Rng};
 
 pub struct PlaySoundEvent(Vec<String>);

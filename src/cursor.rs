@@ -33,7 +33,7 @@ fn cursor_system(
     if let Some(pos) = win.cursor_position() {
         let window_size = Vec2::new(win.width() as f32, win.height() as f32);
         let ndc = (pos / window_size) * 2.0 - Vec2::ONE;
-        let ndc_to_world = transform.compute_matrix() * camera.projection_matrix.inverse();
+        let ndc_to_world = transform.compute_matrix() * camera.projection_matrix().inverse();
         let world_pos = ndc_to_world.project_point3(ndc.extend(-1.0));
 
         cursor.0 = world_pos.truncate();
