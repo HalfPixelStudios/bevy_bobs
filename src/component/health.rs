@@ -63,6 +63,16 @@ impl Health {
     pub fn percent(&self) -> f32 {
         self.current_hp as f32 / self.original_hp as f32
     }
+
+    /// Get the current health value
+    pub fn current(&self) -> u32 {
+        self.current_hp
+    }
+
+    /// Get the original health value
+    pub fn original(&self) -> u32 {
+        self.original_hp
+    }
 }
 
 impl Deref for Health {
