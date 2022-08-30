@@ -10,10 +10,10 @@ use bevy_inspector_egui::Inspectable;
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
 
-/// Health component, initilize only using then `new` function
+/// Health component, initialize only using then `new` function
 #[cfg_attr(feature = "egui", derive(Inspectable))]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
-#[derive(Component, Clone, Eq, PartialEq)]
+#[derive(Component, Clone, Eq, Copy, PartialEq)]
 pub struct Health {
     original_hp: u32,
     current_hp: u32,
