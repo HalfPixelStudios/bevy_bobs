@@ -1,6 +1,7 @@
 /// 2d enum for directions
 use bevy::prelude::*;
 
+/// Enum related to cardinal directions
 #[derive(Debug, Copy, Clone)]
 pub enum Dir {
     None,
@@ -50,6 +51,7 @@ impl From<String> for Dir {
     }
 }
 
+/// Convert from cardinal direction to radians
 pub fn to_rotation(dir: Dir) -> f32 {
     use std::f32::consts::PI;
 
